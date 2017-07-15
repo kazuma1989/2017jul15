@@ -1,0 +1,5 @@
+jenkins:
+  image: jenkins:2.60.1-alpine
+  ports:
+    - 8080:8080
+    - 50000
