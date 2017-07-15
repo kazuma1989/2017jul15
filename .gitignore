@@ -1,4 +1,15 @@
 # Ignore Gradle build artifacts
 /.gradle
 /build
-/jenkins_home
+
+# Track only Jenkins configs
+/jenkins_home/*
+/jenkins_home/jobs/*/builds
+/jenkins_home/jobs/*/lastSuccessful
+/jenkins_home/jobs/*/lastStable
+/jenkins_home/jobs/*/nextBuildNumber
+
+!/jenkins_home/config.xml
+!/jenkins_home/jobs
+!/jenkins_home/nodes
+!/jenkins_home/users
