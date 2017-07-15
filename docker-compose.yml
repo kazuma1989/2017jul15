@@ -1,5 +1,23 @@
+# Jenkinsコンテナ
 jenkins:
+  # Dockerfileからビルドするのではなく、Docker Hubの公式イメージを使う
+  # サイズが小さいAlpineベースのイメージを使う
   image: jenkins:2.60.1-alpine
+
+  # コンテナ内のポートをホストに公開する
+  # 書式 HOST:CONTAINER
   ports:
+    # Jenkins画面のポートを同じ番号でホストに公開する
     - 8080:8080
-    - 50000
+
+# Jettyコンテナ
+jetty:
+  # Dockerfileからビルドするのではなく、Docker Hubの公式イメージを使う
+  # サイズが小さいAlpineベースのイメージを使う
+  image: jetty:9.4.1-alpine
+
+  # コンテナ内のポートをホストに公開する
+  # 書式 HOST:CONTAINER
+  ports:
+    # Jettyのポートを同じ番号でホストに公開する
+    - 8080:8081
