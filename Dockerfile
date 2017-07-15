@@ -9,6 +9,3 @@ FROM jenkins:2.60.1-alpine
 # }
 COPY plugins.txt /plugins.txt
 RUN install-plugins.sh < /plugins.txt
-
-# 
-COPY ssh-files /var/jenkins_home/.ssh
