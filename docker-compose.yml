@@ -1,3 +1,4 @@
+# Compose fileの書式バージョン
 version: "3.3"
 
 services:
@@ -9,6 +10,7 @@ services:
     # 
     links:
       - jetty
+      - jetty2
 
     # コンテナ内のポートをホストに公開する
     # 書式 HOST:CONTAINER
@@ -30,3 +32,14 @@ services:
     ports:
       # JettyのポートをJenkinsと重複しない値でホストに公開する
       - 8180:8080
+
+  # Jettyコンテナ 2
+  jetty2:
+    # Dockerfileからビルドする
+    build: ./jetty
+
+    # コンテナ内のポートをホストに公開する
+    # 書式 HOST:CONTAINER
+    ports:
+      # JettyのポートをJenkinsと重複しない値でホストに公開する
+      - 8280:8080
