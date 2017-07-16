@@ -1,6 +1,10 @@
+# Ignore general dot-started files
+.*
+!.gitignore
+
 # Ignore Gradle build artifacts
-/.gradle
 /build
+/bin/
 
 # Track only Jenkins configs
 /jenkins_home/*

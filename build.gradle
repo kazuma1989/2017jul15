@@ -26,3 +26,12 @@ dependencies {
 war {
     archiveName = 'myapp.war'
 }
+
+// ビルド時にバージョンを書き換える
+task versionProp {
+    doLast {
+        ant.propertyfile(file: './src/main/resources/version.properties') {
+            entry key: 'version', value: new Date().format('yyyy-MM-dd HH:mm:ss')
+        }
+    }
+}
