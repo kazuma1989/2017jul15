@@ -9,10 +9,10 @@
   <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.20">
     <host>jetty</host>
     <port>22</port>
-    <credentialsId>512e4dd0-da84-4035-bf74-d6ca23f17ac0</credentialsId>
+    <credentialsId>ef48d525-e0ea-40ee-bb10-9f9f045852cd</credentialsId>
     <maxNumRetries>0</maxNumRetries>
     <retryWaitTime>0</retryWaitTime>
-    <sshHostKeyVerificationStrategy class="hudson.plugins.sshslaves.verifiers.KnownHostsFileKeyVerificationStrategy"/>
+    <sshHostKeyVerificationStrategy class="hudson.plugins.sshslaves.verifiers.NonVerifyingKeyVerificationStrategy"/>
   </launcher>
   <label></label>
   <nodeProperties/>

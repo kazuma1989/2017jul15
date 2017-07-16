@@ -10,6 +10,7 @@
 /jenkins_home/jobs/*/nextBuildNumber
 
 !/jenkins_home/config.xml
+!/jenkins_home/credentials.xml
 !/jenkins_home/jobs
 !/jenkins_home/nodes
 !/jenkins_home/users
