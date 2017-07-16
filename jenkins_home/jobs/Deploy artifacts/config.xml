@@ -33,6 +33,13 @@
       </selector>
       <doNotFingerprintArtifacts>false</doNotFingerprintArtifacts>
     </hudson.plugins.copyartifact.CopyArtifact>
+    <hudson.tasks.Shell>
+      <command>set -eux
+
+rm -f /var/lib/jetty/webapps/*.war
+mv ./build/libs/*.war /var/lib/jetty/webapps
+</command>
+    </hudson.tasks.Shell>
   </builders>
   <publishers/>
   <buildWrappers/>
