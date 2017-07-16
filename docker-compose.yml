@@ -4,9 +4,7 @@ services:
   # Jenkinsコンテナ
   jenkins:
     # Dockerfileからビルドする
-    build:
-      context: ./
-      dockerfile: Dockerfile
+    build: ./jenkins
 
     # 
     links:
@@ -20,17 +18,15 @@ services:
 
     # 
     volumes:
-      - ./jenkins_home:/var/jenkins_home
+      - ./jenkins/jenkins_home:/var/jenkins_home
 
   # Jettyコンテナ
   jetty:
     # Dockerfileからビルドする
-    build:
-      context: ./
-      dockerfile: jetty.Dockerfile
+    build: ./jetty
 
     # コンテナ内のポートをホストに公開する
     # 書式 HOST:CONTAINER
     ports:
-      # Jettyのポートをランダムな値でホストに公開する
-      - 8080
+      # JettyのポートをJenkinsと重複しない値でホストに公開する
+      - 8180:8080

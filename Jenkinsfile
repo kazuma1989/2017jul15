@@ -3,6 +3,8 @@ node('master') {
         git 'https://github.com/kazuma1989/2017jul15.git'
         sh './gradlew buildTime clean war'
         stash includes: 'build/libs/*.war', name: 'war'
+
+        archiveArtifacts 'build/libs/*.war'
     }
 }
 

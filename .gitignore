@@ -7,14 +7,14 @@
 /bin/
 
 # Track only Jenkins configs
-/jenkins_home/*
-/jenkins_home/jobs/*/builds
-/jenkins_home/jobs/*/lastSuccessful
-/jenkins_home/jobs/*/lastStable
-/jenkins_home/jobs/*/nextBuildNumber
+/jenkins/jenkins_home/*
+/jenkins/jenkins_home/jobs/*/builds
+/jenkins/jenkins_home/jobs/*/lastSuccessful
+/jenkins/jenkins_home/jobs/*/lastStable
+/jenkins/jenkins_home/jobs/*/nextBuildNumber
 
-!/jenkins_home/config.xml
-!/jenkins_home/credentials.xml
-!/jenkins_home/jobs
-!/jenkins_home/nodes
-!/jenkins_home/users
+!/jenkins/jenkins_home/config.xml
+!/jenkins/jenkins_home/credentials.xml
+!/jenkins/jenkins_home/jobs
+!/jenkins/jenkins_home/nodes
+!/jenkins/jenkins_home/users
