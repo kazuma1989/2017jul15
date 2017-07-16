@@ -39,6 +39,7 @@
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
         <string>Build java project</string>
         <string>Deploy artifacts</string>
+        <string>Undeploy</string>
       </jobNames>
       <jobFilters/>
       <columns>
@@ -62,6 +63,7 @@
         <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
         <string>Release apps</string>
         <string>Release apps (no sub task)</string>
+        <string>Release apps (non pipeline)</string>
       </jobNames>
       <jobFilters/>
       <columns>

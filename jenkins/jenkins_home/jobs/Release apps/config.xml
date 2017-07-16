@@ -4,18 +4,30 @@
   <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>REVISION</name>
+          <description></description>
+          <defaultValue>master</defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
     <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
       <triggers/>
     </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
   </properties>
   <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.36.1">
-    <script>node(&apos;master&apos;) {
-   stage(&apos;Build&apos;) {
-       build &apos;Build java project&apos;
-   }
-   stage(&apos;Deploy&apos;) {
-       build job: &apos;Deploy artifacts&apos;, parameters: [string(name: &apos;BUILD_SELECTOR&apos;, value: &apos;&lt;StatusBuildSelector plugin=&quot;copyartifact@1.38.1&quot;/&gt;&apos;)]
-   }
+    <script>stage(&apos;Build&apos;) {
+    build job: &apos;Build java project&apos;, parameters: [string(name: &apos;REVISION&apos;, value: params.REVISION)]
+}
+
+stage(&apos;Undeploy&apos;) {
+    build &apos;Undeploy&apos;
+}
+
+stage(&apos;Deploy&apos;) {
+    build job: &apos;Deploy artifacts&apos;, parameters: [string(name: &apos;BUILD_SELECTOR&apos;, value: &apos;&lt;StatusBuildSelector plugin=&quot;copyartifact@1.38.1&quot;/&gt;&apos;)]
 }
 </script>
     <sandbox>true</sandbox>
