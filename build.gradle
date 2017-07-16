@@ -28,10 +28,10 @@ war {
 }
 
 // ビルド時にバージョンを書き換える
-task versionProp {
+task buildTime {
     doLast {
-        ant.propertyfile(file: './src/main/resources/version.properties') {
-            entry key: 'version', value: new Date().format('yyyy-MM-dd HH:mm:ss')
+        ant.propertyfile(file: './src/main/resources/buildTime.properties') {
+            entry key: 'buildTime', value: new Date().format('yyyy-MM-dd HH:mm:ss')
         }
     }
 }

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class VersionServlet extends HttpServlet {
+public class BuildTimeServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -18,10 +18,10 @@ public class VersionServlet extends HttpServlet {
 			throws ServletException, IOException {
 		resp.setContentType("text/html; charset=UTF-8");
 
-		// GETメソッドのときは、パラメーターによらずバージョン情報を返す
-		ResourceBundle bundle = ResourceBundle.getBundle("version");
+		// GETメソッドのときは、パラメーターによらずビルド時刻を返す
+		ResourceBundle bundle = ResourceBundle.getBundle("buildTime");
 
 		PrintWriter out = resp.getWriter();
-		out.println(bundle.getString("version"));
+		out.println(bundle.getString("buildTime"));
 	}
 }
