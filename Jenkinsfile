@@ -7,9 +7,12 @@ node('master') {
 }
 
 node('jetty') {
+    stage('Undeploy') {
+        sh 'rm -f /var/lib/jetty/webapps/*.war'
+    }
+
     stage('Deploy') {
         unstash 'war'
-        sh 'rm -f /var/lib/jetty/webapps/*.war'
         sh 'mv ./build/libs/*.war /var/lib/jetty/webapps/'
     }
 }
