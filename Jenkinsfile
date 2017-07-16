@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git branch: 'master', url: 'https://github.com/kazuma1989/2017jul15.git'
+                git branch: params.REVISION, url: 'https://github.com/kazuma1989/2017jul15.git'
                 sh './gradlew --no-daemon buildTime clean war'
                 stash includes: 'build/libs/*.war', name: 'war'
 
