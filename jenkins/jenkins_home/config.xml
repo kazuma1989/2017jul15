@@ -62,9 +62,9 @@
       <properties class="hudson.model.View$PropertyList"/>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
-        <string>Release apps</string>
         <string>Release apps (no sub task)</string>
         <string>Release apps (non pipeline)</string>
+        <string>Release apps (pipeline and sub tasks)</string>
       </jobNames>
       <jobFilters/>
       <columns>
