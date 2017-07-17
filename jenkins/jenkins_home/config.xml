@@ -39,6 +39,7 @@
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
         <string>Build java project</string>
         <string>Deploy artifacts</string>
+        <string>Deploy artifacts (multi)</string>
         <string>Undeploy</string>
       </jobNames>
       <jobFilters/>

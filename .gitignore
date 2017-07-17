@@ -8,10 +8,10 @@
 
 # Track only Jenkins configs
 /jenkins/jenkins_home/*
-/jenkins/jenkins_home/jobs/*/builds
-/jenkins/jenkins_home/jobs/*/lastSuccessful
-/jenkins/jenkins_home/jobs/*/lastStable
-/jenkins/jenkins_home/jobs/*/nextBuildNumber
+/jenkins/jenkins_home/jobs/**/builds
+/jenkins/jenkins_home/jobs/**/lastSuccessful
+/jenkins/jenkins_home/jobs/**/lastStable
+/jenkins/jenkins_home/jobs/**/nextBuildNumber
 
 !/jenkins/jenkins_home/config.xml
 !/jenkins/jenkins_home/credentials.xml
